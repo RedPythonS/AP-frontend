@@ -1,1 +1,32 @@
-<p>acerca-de works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de</title>
+
+    <style>
+        .texto_normal
+        {
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mat-card">
+        <div class="card-titles">
+            <h2>Acerca de</h2>
+            <div>
+                <button class="btn-right" (click)="openModal()"><i class="fa-solid fa-pencil"></i></button>
+                    <div *ngIf="modalSwitch_editar_acercade == true">
+                        <app-editar-acerca-de></app-editar-acerca-de>
+                    </div>
+            </div>
+        </div>
+        <div class="texto_normal">
+            Prueba de textContenhghghgh
+        </div>
+    </div>
+</body>
+</html>

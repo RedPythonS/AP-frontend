@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+
+  <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    body
+    {
+      position: fixed;
+      
+      top:60px;
+      width: 100vh;
+      left:calc(50% - (100vh / 2));
+      
+      right: auto;
+      
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        min-width: 70vh;
+        flex-direction: column;
+        /*gap: 30px;*/
+        background: #1c2b3a;
+        opacity: 0.9;
+        border-radius: 8px;
+        z-index: 30;
+    }
+
+    h3{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 30px;
+      color: rgba(5, 107, 51, 0.719);
+      padding: 10px;
+      margin-left: 13px;
+    }
+
+    .inputBox
+    {
+        position: relative;
+        width: 250px;
+        padding: 6px;
+        margin-left: Calc(50% - (60px));
+    }
+
+    .inputBox input 
+    {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgba(240, 240, 240, 0.8);
+        background: #1c2b3a;
+        border-radius: 2px;
+        outline: none;
+        color: #fff;
+        font-size: 1em;
+        
+    }
+
+    .inputBox span
+    {
+        position: absolute;
+        left: 0;
+        padding: 10px;
+        pointer-events: none;
+        font-size: 1em;
+        color:rgb(190, 241, 175);
+        text-transform: uppercase;
+        transition: 0.5s;
+    }
+
+    .inputBox input:valid ~ span,
+    .inputBox input:focus ~ span
+    {
+        color: cyan;
+        transform: translateX(10px) translateY(-7px);
+        font-size: 0.70em;
+        padding: 0 10px;
+        background: #1c2b3a;
+        border-left: 1px solid rgb(0, 255, 157);
+        border-right: 1px solid rgb(0, 255, 157);
+        letter-spacing: 0.35em;
+    }
+
+    .inputBox:nth-child(2) input:valid ~ span,
+    .inputBox:nth-child(2) input:focus ~ span
+    {
+        border-radius: 2px;
+        border-top: 1px solid rgb(0, 255, 157);
+        border-bottom:  1px solid rgb(0, 255, 157);
+    }
+
+    .inputBox:nth-child(1) input:invalid
+    {
+      border: 1px solid rgb(255, 0, 0);
+    }
+
+    .inputBox:nth-child(1) input:blank
+    {
+      border: 1px solid rgba(240, 240, 240, 0.8);
+    }
+
+    .inputBox input:valid,
+    .inputBox input:focus
+    {
+        border: 1px solid rgb(0, 255, 157);
+    }
+
+    .botones
+    {
+      position:relative;
+      align-items: center;
+      width: 100%;
+      padding: 5px;
+      margin-left: 28%;
+      left: calc(50% -(120vh/2));
+    }
+
+    .boton 
+    {
+        background: transparent;
+        padding: 12px 22px;
+        margin: 5px;
+        width: 20vh;
+        text-align: center;
+        border-radius: 11px;
+        position: relative;
+        display:inline-flex;
+        flex-direction: column;
+        
+        left: calc(50% -(20vh /2));
+        font-size: 16px;
+        border: 1px solid rgb(0, 255, 157);
+    }
+    .boton:hover
+    {
+      border: 1px solid rgb(9, 255, 0);
+      box-shadow: 1px 1px 13px rgba(9,255,0,0.5);
+
+    }
+    .boton:active 
+    {
+      /*background-color: #3e8e41;*/
+      box-shadow: 0 5px 15px rgb(255, 251, 31);
+      transform: translateY(4px);
+    }
+
+    #loginForm
+    {
+      margin: 20px;
+      align-items: center;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Formulario de login</h3>
+<form [formGroup]="loginForm" id="loginForm" (ngSubmit)="login()">
+  <div class="inputBox">
+    <!-- <label>Email:</label> -->
+    <input type="email" formControlName="email"  id="email" required="required">
+    <span>e-mail</span>
+  </div>
+  <div class="inputBox">
+    <!-- <label>Password</label> -->
+    <input type="password" formControlName="password" id="password" required="required">
+    <span>Contraseña</span>
+  </div>
+  <div class="botones">
+    <button type="submit" class="boton">Enviar</button>
+    
+
+    <button (click)="closeModal()" class="boton">Cerrar</button>
+  </div>
+  
+</form>
+</body>
+</html>

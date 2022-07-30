@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+.card{
+    
+    display: grid;
+    border: none;
+
+}
+
+.mat-card{
+    border: none;
+    display: grid;
+    grid-area: span;
+}
+
+.card-titles
+{
+    position: relative;
+    margin: 20px;
+    padding-right: 20px;
+
+}
+
+h2{
+    display: flex;
+    float: left;
+}
+
+.btn-right
+{
+    
+    display:flex;
+    float: right;
+    margin-right: 20px;
+    border: none;
+    background: transparent;
+}
+
+.btn-right:hover
+{
+  
+  text-shadow: 3px 3px 10px lime, -3px -3px 13px limegreen;
+}
+
+
+@-webkit-keyframes 
+load { 0% {
+stroke-dashoffset:0
+}
+}
+@-moz-keyframes 
+load { 0% {
+stroke-dashoffset:0
+}
+}
+@keyframes 
+load { 0% {
+stroke-dashoffset:0
+}
+}
+

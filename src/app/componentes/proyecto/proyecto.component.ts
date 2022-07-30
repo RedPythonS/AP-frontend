@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SwitchService } from 'src/app/servicios/switch.service';
 
 @Component({
   selector: 'app-proyecto',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectoComponent implements OnInit {
 
-  constructor() { }
+  modalSwitch:boolean = false;
 
-  ngOnInit(): void {
+  
+  
+
+  constructor(private modalService: SwitchService) { }
+
+  ngOnInit(){
+
+    this.modalService.$modal.subscribe((valor) => {this.modalSwitch = (valor)});
+
+    
+    
   }
+
+  openModal() {
+    this.modalSwitch = true;
+  }
+
+  
 
 }
