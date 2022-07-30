@@ -25,6 +25,7 @@ button
 }
 button:hover{
     color: blue;
+    color: #149b08
 }
 
 .fa-user
