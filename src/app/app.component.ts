@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SwitchService } from 'src/app/servicios/switch.service';
 
 @Component({
   selector: 'app-root',
@@ -8,26 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   title = 'ApFront';
 
-  progress: number = 0;
-  noOfFiles: number = 13;
-  completed: boolean = false;
+
+
+  modalSwitch:boolean = false;
+
+  constructor(private modalService: SwitchService) {}
 
   public ngOnInit(): void {
-    this.updateProgress();
+    //this.updateProgress();
+    this.modalService.$modal.subscribe((valor) => {this.modalSwitch = (valor)});
   }
 
-  delay(ms: number) {
-    return new Promise((resolve, reject) => setTimeout(resolve, ms));
-  }
-
-  async updateProgress() {
-    this.completed = false;
-    let n = 100 / this.noOfFiles;
-    for (let i = 0; i <= this.noOfFiles; i++) {
-      await this.delay(500);
-      this.progress = Math.round(i * n);
-      console.log(i);
-    }
-    this.completed = true;
+  openModal() {
+    this.modalSwitch = true;
   }
 }

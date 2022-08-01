@@ -1,1 +1,19 @@
-<p>experiencia works!</p>
+<div>
+    <h2>Experiencias Laborales</h2>
+    <div>
+        <button class="btn-right" (click)="openModal()"><i class="fa-solid fa-pencil"></i></button>
+        <div *ngIf="modalSwitch_experiencia == true">
+            <app-crear-habilidad></app-crear-habilidad>
+        </div>
+    </div>
+    <div class="ul-exp" >
+        <ul *ngFor="let experiencia of experiencias">
+            <li>
+                <h4>{{experiencia.lugar}}</h4>
+                <p>{{experiencia.puesto}}</p>
+                <p>{{experiencia.desde}}  -  {{experiencia.hasta}}</p>
+                <p>{{experiencia.descripcion}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

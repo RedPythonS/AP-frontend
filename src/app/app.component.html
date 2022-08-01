@@ -1,1 +1,42 @@
-<app-proyecto></app-proyecto>
+<nav class="navbar sticky-top navbar-light justify-content-end" style="background-color: #ececec; border-bottom-left-radius: 0px;">
+    
+    <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#"><i class="fa-brands fa-youtube"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" ><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+
+        <li class="nav-item">
+            <button (click)="openModal()"> 
+            <i class="fa-solid fa-user"> Iniciar sesión</i>
+            </button>
+                
+                    <div *ngIf="modalSwitch == true">
+                        <app-login></app-login>
+                    </div>
+            
+        </li>
+    </ul>
+</nav>
+
+<section>
+    <app-encabezado></app-encabezado>
+</section>
+<section>
+    <app-acerca-de></app-acerca-de>
+</section>
+<section>
+    <app-educacion></app-educacion>
+</section>
+<section>
+    <app-experiencia></app-experiencia>
+</section>
+<section>
+    <app-habilidad></app-habilidad>
+</section>
+

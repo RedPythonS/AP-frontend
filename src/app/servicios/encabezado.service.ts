@@ -17,11 +17,11 @@ export class EncabezadoService {
   }
 
   public mostrarEncabezado(id:number): Observable<Encabezado>{
-    return this.httpCliente.get<Encabezado>(this.encabezadoURL+'obtener/persona/${id}');
+    return this.httpCliente.get<Encabezado>(this.encabezadoURL+`obtener/persona/${id}`);
   }
 
   public actualizarEncabezado(id:number, encabezado:Encabezado): Observable<any>{
-    return this.httpCliente.put<any>(this.encabezadoURL+'actualizar/${id}', encabezado);
+    return this.httpCliente.put<any>(this.encabezadoURL+`actualizar/${id}`, encabezado);
   }
 
 

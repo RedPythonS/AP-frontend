@@ -1,1 +1,30 @@
-<p>educacion works!</p>
+<div class="mat-card">
+    <div class="card-titles">
+        <h2>Educación</h2>
+        <div>
+          <button class="btn-right" (click)="openModal()"><i class="fa-solid fa-pencil"></i></button>
+          <div *ngIf="modalSwitch_educacion == true">
+              <app-crear-habilidad></app-crear-habilidad>
+          </div>
+        </div>
+    </div>
+
+        
+          <!--  Container  -->
+            <ul class="progress" *ngFor="let educacion of educaciones">
+                <li>
+                    <div class="tarjeta-ed">
+                        <img id="logo-educacion"
+                            [src]="educacion.imagen"
+                        />
+                    </div>
+                </li>
+                <li>
+                    <div class="list-ed">
+                        <h3>{{educacion.lugar}}</h3>
+                        <h5>{{educacion.titulo}}</h5>
+                        <p>{{educacion.desde}} - {{educacion.hasta}}</p>
+                    </div>
+                </li>
+            </ul>
+</div>

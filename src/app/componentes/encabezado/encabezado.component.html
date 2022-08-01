@@ -1,1 +1,41 @@
-<p>encabezado works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encabezado</title>
+</head>
+<body>
+    <div class="mat-card" *ngIf="encabezado">
+        <div id="profile-background">
+            <img id="foto-cabecera"
+                [src]="encabezado.linkImagenFondo"
+            />
+        </div>
+        <div id="profile-foto">
+            <img id="foto-personal"
+                [src]="encabezado.linkImagenFoto"
+            />
+            <button class="btn-right"><i class="fa-solid fa-pencil"></i></button>
+        </div>
+        <div class="card-myinfo">
+            <h2>{{encabezado.apellido}},  {{encabezado.nombre}}</h2>
+            
+            
+            <h3>{{encabezado.descripcion}}</h3>
+            
+            
+            <h4>{{encabezado.lugar}}</h4>
+            
+            <h5><a href="mailto:{{encabezado.contacto}}">Contacto</a></h5>
+            <div>
+              <button class="btn-right" (click)="openModal_encabezado()"><i class="fa-solid fa-pencil"></i></button>
+              <div *ngIf="modalSwitch_encabezado == true">
+                  <app-editar-encabezado></app-editar-encabezado>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

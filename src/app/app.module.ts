@@ -20,6 +20,7 @@ import { CrearExperienciaComponent } from './componentes/experiencia/crear-exper
 import { CrearHabilidadComponent } from './componentes/habilidad/crear-habilidad/crear-habilidad.component';
 import { EditarHabilidadComponent } from './componentes/habilidad/editar-habilidad/editar-habilidad.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
